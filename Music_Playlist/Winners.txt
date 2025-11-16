@@ -1,0 +1,45 @@
+Original code:
+
+elif choice == "4":
+        def search_song():
+
+            text = input("Search: ")
+            if not album:
+                print(f"{text} not present in the playlist")
+            else:
+                text = input("Search: ").lower()
+                i = 0
+                length = len(album)
+
+                while i < length:
+                    if text == album[i]:
+
+                        i += 1
+                print(f"{text} is present in the playlist")
+        search_song() Can you tell me how to search the song but in this format
+
+
+Corrected version:
+        def search_song():
+
+            if not album:
+                print(f"No such song present in the playlist")
+            else:
+                text = input("Search: ").lower()
+                i = 0
+                length = len(album)
+                found = False
+
+
+                while i < length:
+                    if text in album[i]["Album"].lower() :
+                        print(f"{text} is present in the playlist")
+                        found = True
+                    i += 1
+
+                if not found:
+                    print(f"{text} not present in the playlist")
+
+
+        search_song()
+
